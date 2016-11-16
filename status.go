@@ -8,7 +8,7 @@ import (
 )
 
 func Status(c *cli.Context) error {
-	repo := NewRepo(NewConfigWithDefaults(), afero.NewMemMapFs())
+	repo := NewRepo(NewConfigFromCmdline(c), afero.NewMemMapFs())
 	fmt.Println(repo)
 	return nil
 }

@@ -58,7 +58,7 @@ func main() {
 		},
 		{
 			Name:  "undo",
-			Usage: "rollback changes",
+			Usage: "undo a commit",
 			Action: func(c *cli.Context) error {
 				fmt.Println("would run undo")
 				return nil
@@ -74,7 +74,7 @@ func main() {
 		},
 		{
 			Name:  "log",
-			Usage: "log of what happened",
+			Usage: "show a log of what happened",
 			Action: func(c *cli.Context) error {
 				fmt.Println("would run log")
 				return nil

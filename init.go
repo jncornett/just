@@ -6,5 +6,5 @@ import (
 )
 
 func Init(c *cli.Context) error {
-	return NewRepo(NewConfigWithDefaults(), afero.NewMemMapFs()).Commit()
+	return NewRepo(NewConfigFromCmdline(c), afero.NewMemMapFs()).Commit()
 }
