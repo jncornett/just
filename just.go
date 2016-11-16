@@ -46,10 +46,7 @@ func main() {
 			Name:    "status",
 			Aliases: []string{"stat"},
 			Usage:   "display repository state",
-			Action: func(c *cli.Context) error {
-				fmt.Println("would run status")
-				return nil
-			},
+			Action:  Status,
 		},
 		{
 			Name:  "commit",
