@@ -10,6 +10,5 @@ func NewRepo(conf *Config, fs Filesystem) *Repo {
 }
 
 func (r *Repo) Commit() error {
-	r.Fs.Mkdir(r.Conf.RepoDirname)
-	return nil
+	return r.Fs.Mkdir(r.Conf.RepoDirname)
 }

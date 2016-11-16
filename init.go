@@ -1,20 +1,12 @@
 package main
 
-import (
-	"log"
-
-	"github.com/urfave/cli"
-)
+import "github.com/urfave/cli"
 
 func Init(c *cli.Context) error {
 	var (
+		// TODO parse global & local config files
 		conf = NewConfigWithDefaults()
 		fs   = NewDefaultFilesystem()
-		repo = NewRepo(conf, fs)
 	)
-	err := repo.Commit()
-	if err != nil {
-		log.Print(err)
-	}
-	return err
+	return NewRepo(conf, fs).Commit()
 }
