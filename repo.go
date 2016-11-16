@@ -1,7 +1,5 @@
 package main
 
-const RepoDirname = ".just"
-
 type Repo struct {
 	Conf *Config
 	Fs   Filesystem
