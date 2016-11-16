@@ -3,17 +3,12 @@ package main
 import (
 	"fmt"
 
+	"github.com/spf13/afero"
 	"github.com/urfave/cli"
 )
 
 func Status(c *cli.Context) error {
-	var (
-		// TODO add a 'Before' hook to auto-generate the repo state,
-		// handle init errors, etc
-		conf = NewConfigWithDefaults()
-		fs   = NewDefaultFilesystem()
-	)
-	repo := NewRepo(conf, fs)
+	repo := NewRepo(NewConfigWithDefaults(), afero.NewMemMapFs())
 	fmt.Println(repo)
 	return nil
 }
