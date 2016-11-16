@@ -7,7 +7,11 @@ import (
 )
 
 func Init(c *cli.Context) error {
-	repo := NewRepo(NewDefaultFilesystem())
+	var (
+		conf = NewConfigWithDefaults()
+		fs   = NewDefaultFilesystem()
+		repo = NewRepo(conf, fs)
+	)
 	err := repo.Commit()
 	if err != nil {
 		log.Print(err)
